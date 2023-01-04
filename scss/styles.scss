@@ -1,13 +1,25 @@
+$navHeight: 5vh;
+
+body {
+	padding: $navHeight;
+}
 nav {
 	width: 100vw;
+	height: $navHeight;
 	position: fixed;
 	top: 0;
+	left: 0;
 	background-color: green;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
 #sidebar {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+	right: 0;
+
 }

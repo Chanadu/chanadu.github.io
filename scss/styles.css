@@ -1,7 +1,13 @@
+body {
+  padding: 5vh;
+}
+
 nav {
   width: 100vw;
+  height: 5vh;
   position: fixed;
   top: 0;
+  left: 0;
   background-color: green;
   display: flex;
   justify-content: center;
@@ -10,6 +16,10 @@ nav {
 
 #sidebar {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
