@@ -1,0 +1,15 @@
+nav {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sidebar {
+  display: flex;
+}
+
+/*# sourceMappingURL=styles.css.map */
