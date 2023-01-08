@@ -1,46 +1,10 @@
-body {
-  padding: 7vh;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(45deg, rgb(0, 255, 255), rgb(0, 145, 255));
-  z-index: -20;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
-
-#navbar {
-  width: 100vw;
-  height: 7vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgb(0, 149, 20);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-#navbar h2 {
-  color: rgb(0, 0, 0);
-}
-#navbar h2 a {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-#navbar h2 a:active {
-  color: rgb(0, 0, 0);
-}
-#navbar h2 a:hover {
-  background-color: rgb(73, 92, 201);
-}
-
-#sidebar {
-  width: 5vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
-  align-items: center;
-  position: absolute;
-  right: 0px;
-  top: 30vh;
-  border: 1px solid black;
-}
-
-/*# sourceMappingURL=styles.css.map */

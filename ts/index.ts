@@ -1,1 +1,1 @@
-console.log("AAFGHGERTA");
+let a = "ABSVED";
