@@ -1,25 +1,49 @@
-$navHeight: 5vh;
+$navHeight: 7vh;
 
 body {
 	padding: $navHeight;
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(
+		45deg,
+		rgb(0, 255, 255),
+		rgb(0, 145, 255)
+	);
+	z-index: -20;
 }
-nav {
+#navbar {
 	width: 100vw;
 	height: $navHeight;
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: green;
+	background-color: rgb(0, 149, 20);
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-evenly;
+	align-items:center;
+	
+	h2 {
+		color:rgb(0, 0, 0);
+		a {
+			color: rgb(0, 0, 0);
+			text-decoration: none;
+		}
+		a:active {
+			color: rgb(0, 0, 0);
+		}
+		a:hover {
+			background-color: rgb(73, 92, 201);
+		}
+	}
 }
 #sidebar {
+	width: 5vw;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: right;
 	align-items: center;
-
-	position: relative;
-	right: 0;
-
+	position: absolute;
+	right: 0px;
+	top: 30vh;
+	border:1px solid black;
 }
