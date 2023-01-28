@@ -13,13 +13,14 @@
   }
 }
 html {
-  background: linear-gradient(cyan, blue);
+  background-color: #23272a;
 }
 
 body {
-  min-height: 100vh;
+  min-height: 97vh;
   max-width: 85%;
-  margin: 0 auto;
+  margin-right: 2vw;
+  padding: 0 auto;
   margin-top: 3vh;
   padding-top: 3vh;
 }
@@ -31,8 +32,8 @@ header #navbar {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #0ba900;
-  color: black;
+  background-color: #2f3135;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,6 +47,19 @@ main {
   min-height: 100%;
   padding: 1% 5%;
 }
+main #sidebar {
+  width: 2vw;
+  border-style: solid;
+  border: 2px black;
+  position: absolute;
+  right: 0;
+  left: 95%;
+  top: 25%;
+}
+main #sidebar .sidebar-image {
+  width: 2em;
+  height: 2em;
+}
 main #selectable-buttons {
   display: grid;
   gap: 0.5%;
@@ -54,9 +68,15 @@ main #selectable-buttons {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
-main #selectable-buttons button {
-  background-color: #758cff;
+main #selectable-buttons a {
+  width: 100%;
+}
+main #selectable-buttons a button {
+  color: white;
+  background-color: #2f3135;
   height: 10em;
+  width: 25em;
   border: none;
+  border-radius: 25%;
   font-size: larger;
 }
