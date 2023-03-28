@@ -1,10 +1,9 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
   box-sizing: border-box;
+  border: none;
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -12,71 +11,67 @@
     scroll-behavior: smooth;
   }
 }
+a {
+  text-underline-position: under;
+  text-decoration-thickness: 8;
+}
+
 html {
-  background-color: #23272a;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
 }
 
 body {
-  min-height: 97vh;
-  max-width: 85%;
-  margin-right: 2vw;
-  padding: 0 auto;
-  margin-top: 3vh;
-  padding-top: 3vh;
+  padding: 0.3rem 3rem;
+  background-color: #008cff;
+  background: linear-gradient(to bottom right, #59bdff, #007fd3);
 }
 
-header #navbar {
-  width: 100vw;
-  height: 3vh;
-  padding: 3vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #2f3135;
-  color: white;
+#navbar {
+  min-height: 10%;
+  min-width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
-header #navbar h2 {
+
+#title,
+.navbar-options {
+  display: inline-block;
+}
+
+#title {
+  width: 50%;
+  font-size: 3rem;
+}
+
+#navbar-options-holder {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   font-size: 2rem;
+}
+#navbar-options-holder a {
+  padding: 0 1%;
+  border-radius: 1000%;
+}
+#navbar-options-holder a:hover {
+  background-color: rgba(255, 255, 255, 0.091);
 }
 
 main {
-  width: 100%;
-  min-height: 100%;
-  padding: 1% 5%;
+  padding-top: 5%;
 }
-main #sidebar {
-  width: 2vw;
-  border-style: solid;
-  border: 2px black;
+main h1 {
+  font-size: 20rem;
+}
+
+footer {
   position: absolute;
-  right: 0;
-  left: 95%;
-  top: 25%;
+  bottom: 0;
 }
-main #sidebar .sidebar-image {
-  width: 2em;
-  height: 2em;
-}
-main #selectable-buttons {
-  display: grid;
-  gap: 0.5%;
-  width: 100%;
-  min-height: 100%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-}
-main #selectable-buttons a {
-  width: 100%;
-}
-main #selectable-buttons a button {
-  color: white;
-  background-color: #2f3135;
-  height: 10em;
-  width: 25em;
-  border: none;
-  border-radius: 25%;
-  font-size: larger;
+footer h3 {
+  font-size: 2rem;
 }

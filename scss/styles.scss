@@ -1,13 +1,10 @@
-$navbarHeight: 3vh;
-$sidebarWidth: 2vw;
-
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
     box-sizing: border-box;
+    //border: 1px solid black;
+    border: none;
+    color: rgb(255, 255, 255);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -16,79 +13,72 @@ $sidebarWidth: 2vw;
     }
 }
 
+a {
+    text-underline-position: under;
+    text-decoration-thickness: 8;
+}
+
 html {
-    background-color: #23272a;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 62.5%;
 }
 
 body {
-    min-height: 100vh - $navbarHeight;
-    max-width: 85%;
-    margin-right: $sidebarWidth;
-    padding: 0 auto;
-    margin-top: $navbarHeight;
-    padding-top: $navbarHeight;
+    padding: .3rem 3rem;
+    background-color: rgb(0, 140, 255);
+    background: linear-gradient(to bottom right, #59bdff,
+            #007fd3, );
 }
 
-header {
-    #navbar {
-        width: 100vw;
-        height: $navbarHeight;
-        padding: $navbarHeight;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: #2f3135;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+#navbar {
+    min-height: 10%;
+    min-width: 100%;
+    display: flex;
+}
 
-        h2 {
-            font-size: 2rem;
-        }
+#title,
+.navbar-options {
+    display: inline-block;
+}
+
+#title {
+    width: 50%;
+    font-size: 3rem;
+}
+
+#navbar-options-holder {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem;
+
+    a {
+        padding: 0 1%;
+        border-radius: 1000%;
+    }
+
+    a:hover {
+        background-color: rgba(255, 255, 255, 0.091);
     }
 }
 
 main {
-    width: 100%;
-    min-height: 100%;
-    padding: 1% 5%;
+    padding-top: 5%;
 
-    #sidebar {
-        width: $sidebarWidth;
-        border-style: solid;
-        border: 2px black;
-        position: absolute;
-        right: 0;
-        left: 95%;
-        top: 25%;
-
-        .sidebar-image {
-            width: 2em;
-            height: 2em;
-        }
+    h1 {
+        font-size: 20rem;
     }
+}
 
-    #selectable-buttons {
-        display: grid;
-        gap: 0.5%;
-        width: 100%;
-        min-height: 100%;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+footer {
+    position: absolute;
+    bottom: 0;
 
-        a {
-            width: 100%;
-
-            button {
-                color: white;
-                background-color: #2f3135;
-                height: 10em;
-                width: 25em;
-                border: none;
-                border-radius: 25%;
-                font-size: larger;
-            }
-        }
+    h3 {
+        font-size: 2rem;
     }
 }
