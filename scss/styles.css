@@ -34,18 +34,17 @@ body {
   min-width: 100%;
   display: flex;
 }
-
-#title,
-.navbar-options {
+#navbar #title-link {
+  width: 50%;
+}
+#navbar #title,
+#navbar .navbar-options {
   display: inline-block;
 }
-
-#title {
-  width: 50%;
+#navbar #title {
   font-size: 3rem;
 }
-
-#navbar-options-holder {
+#navbar #navbar-options-holder {
   width: 50%;
   display: flex;
   flex-direction: row;
@@ -53,24 +52,25 @@ body {
   align-items: center;
   font-size: 2rem;
 }
-#navbar-options-holder a {
+#navbar #navbar-options-holder a {
   padding: 0 1%;
   border-radius: 1000%;
 }
-#navbar-options-holder a:hover {
+#navbar #navbar-options-holder a:hover {
   background-color: rgba(255, 255, 255, 0.091);
 }
 
 main {
   padding-top: 5%;
+  min-height: 79rem;
 }
 main h1 {
   font-size: 20rem;
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
+  display: flex;
+  justify-content: center;
 }
 footer h3 {
   font-size: 2rem;

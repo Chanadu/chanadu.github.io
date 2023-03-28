@@ -36,38 +36,43 @@ body {
     min-height: 10%;
     min-width: 100%;
     display: flex;
-}
 
-#title,
-.navbar-options {
-    display: inline-block;
-}
-
-#title {
-    width: 50%;
-    font-size: 3rem;
-}
-
-#navbar-options-holder {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 2rem;
-
-    a {
-        padding: 0 1%;
-        border-radius: 1000%;
+    #title-link {
+        width: 50%;
     }
 
-    a:hover {
-        background-color: rgba(255, 255, 255, 0.091);
+    #title,
+    .navbar-options {
+        display: inline-block;
+    }
+
+    #title {
+        font-size: 3rem;
+    }
+
+    #navbar-options-holder {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 2rem;
+
+        a {
+            padding: 0 1%;
+            border-radius: 1000%;
+        }
+
+        a:hover {
+            background-color: rgba(255, 255, 255, 0.091);
+        }
     }
 }
+
 
 main {
     padding-top: 5%;
+    min-height: 79rem;
 
     h1 {
         font-size: 20rem;
@@ -75,8 +80,8 @@ main {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
+    display: flex;
+    justify-content: center;
 
     h3 {
         font-size: 2rem;
