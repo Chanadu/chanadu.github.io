@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: none;
+  color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+a {
+  text-underline-position: under;
+  text-decoration-thickness: 8;
+}
+
+html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0.3rem 3rem;
+  background-color: #008cff;
+  background: linear-gradient(to bottom right, #59bdff, #007fd3);
+}
