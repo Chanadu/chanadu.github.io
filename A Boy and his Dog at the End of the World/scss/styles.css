@@ -16,15 +16,22 @@ a {
   text-decoration-thickness: 8;
 }
 
-html {
+html,
+body {
   margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
   font-size: 62.5%;
+  overflow: hidden;
+  background-color: #008cff;
+  background: linear-gradient(to bottom left, #59bdff, #007fd3);
 }
 
-body {
-  padding: 0.3rem 3rem;
+#game-canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
   background-color: #008cff;
-  background: linear-gradient(to bottom right, #59bdff, #007fd3);
+  background: linear-gradient(to bottom left, #59bdff, #007fd3);
 }
