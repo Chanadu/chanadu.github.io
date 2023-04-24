@@ -23,54 +23,46 @@ body {
   height: 100%;
   width: 100%;
   font-size: 62.5%;
-  overflow: hidden;
   background-color: #008cff;
-  background: linear-gradient(to bottom right, #59bdff, #007fd3);
+  background: linear-gradient(to bottom left, #59bdff, #006cb4);
 }
 
-#navbar {
-  min-height: 10%;
-  min-width: 100%;
-  display: flex;
-}
-#navbar #title-link {
-  width: 50%;
-}
-#navbar #title,
-#navbar .navbar-options {
-  display: inline-block;
-}
-#navbar #title {
-  font-size: 3rem;
-}
-#navbar #navbar-options-holder {
-  width: 50%;
+#card-holder {
+  position: absolute;
+  bottom: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size: 2rem;
-}
-#navbar #navbar-options-holder a {
-  padding: 0 1%;
-  border-radius: 1000%;
-}
-#navbar #navbar-options-holder a:hover {
-  background-color: rgba(255, 255, 255, 0.091);
-}
-
-main {
-  padding-top: 5%;
-  min-height: 79rem;
-}
-main h1 {
-  font-size: 20rem;
-}
-
-footer {
-  display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 1%;
+  min-height: 35rem;
+  width: 100%;
 }
-footer h3 {
-  font-size: 2rem;
+
+.card {
+  border: black 1px solid;
+  background-color: red;
+  border-radius: 5%;
+  width: 25em;
+  height: 35em;
+  box-shadow: 3px 3px 5px #444444;
+}
+
+.card:hover {
+  box-shadow: 7px 7px 5px #444444;
+}
+
+@keyframes card-animation {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 3;
+    top: 0;
+  }
+}
+.card-animation {
+  animation-name: card-animation;
+  animation-duration: 2s;
+  animation-delay: 0.2s;
 }

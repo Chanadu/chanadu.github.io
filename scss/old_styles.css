@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: none;
+  color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+a {
+  text-underline-position: under;
+  text-decoration-thickness: 8;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+  overflow: hidden;
+  background-color: #008cff;
+  background: linear-gradient(to bottom right, #59bdff, #007fd3);
+}
+
+#navbar {
+  min-height: 10%;
+  min-width: 100%;
+  display: flex;
+}
+#navbar #title-link {
+  width: 50%;
+}
+#navbar #title,
+#navbar .navbar-options {
+  display: inline-block;
+}
+#navbar #title {
+  font-size: 3rem;
+}
+#navbar #navbar-options-holder {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2rem;
+}
+#navbar #navbar-options-holder a {
+  padding: 0 1%;
+  border-radius: 1000%;
+}
+#navbar #navbar-options-holder a:hover {
+  background-color: rgba(255, 255, 255, 0.091);
+}
+
+main {
+  padding-top: 5%;
+  min-height: 79rem;
+}
+main h1 {
+  font-size: 20rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer h3 {
+  font-size: 2rem;
+}
