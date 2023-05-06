@@ -23,15 +23,6 @@ body {
   height: 100%;
   width: 100%;
   font-size: 62.5%;
-  overflow: hidden;
-  background-color: #008cff;
-  background: linear-gradient(to bottom left, #59bdff, #007fd3);
-}
-
-#game-canvas {
-  position: fixed;
-  left: 0;
-  top: 0;
   background-color: #008cff;
   background: linear-gradient(to bottom left, #59bdff, #007fd3);
 }
