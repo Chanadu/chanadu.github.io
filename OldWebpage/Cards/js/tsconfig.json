@@ -1,9 +1,0 @@
-{
-	"compilerOptions": {
-		"target": "ES5",    
-		"downlevelIteration": true,
-		"module": "commonjs",
-    	"sourceMap": true,
-		"lib": ["DOM", "ES2021"]
-	}
-}

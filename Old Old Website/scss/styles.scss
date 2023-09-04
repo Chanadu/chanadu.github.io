@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    //border: 1px solid black;
+    border: none;
+    color: rgb(255, 255, 255);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+a {
+    text-underline-position: under;
+    text-decoration-thickness: 8;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 62.5%;
+    overflow: hidden;
+    background-color: rgb(0, 140, 255);
+    background: linear-gradient(to bottom left, #59bdff,
+            #007fd3, );
+}
+
+#game-canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    background-color: rgb(0, 140, 255);
+    background: linear-gradient(to bottom left, #59bdff,
+            #007fd3, );
+
+}
