@@ -618,14 +618,6 @@ video {
   opacity: 0;
 }
 
-.duration-1000 {
-  transition-duration: 1000ms;
-}
-
 .duration-100 {
   transition-duration: 100ms;
-}
-
-.ease-in {
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
