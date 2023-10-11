@@ -534,6 +534,30 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.left-\[1000px\] {
+  left: 1000px;
+}
+
+.left-\[200px\] {
+  left: 200px;
+}
+
+.left-\[10000px\] {
+  left: 10000px;
+}
+
+.left-\[100px\] {
+  left: 100px;
+}
+
+.left-\[500px\] {
+  left: 500px;
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -552,6 +576,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.transform-gpu {
+  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .bg-slate-900 {

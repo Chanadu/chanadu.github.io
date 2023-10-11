@@ -1,11 +1,15 @@
-var hex = document.createElement('img')
-hex.id = "hex"
-hex.classList.add("h-52", "w-52")
-hex.src = "/imgs/hexagon.svg"
-hex.alt = "Hexagon"
+console.log("Hello World")
 
-console.log("1231233 World")
-document.getElementById("hexContainer")!.appendChild(hex)
+let hexes : HTMLImageElement[] = [];
+let baseHex = document.createElement('img')
+baseHex.id = "hex"
+baseHex.className = "h-52 w-52 absolute transform-gpu"
+baseHex.src = "/imgs/hexagon.svg"
+baseHex.alt = "Hexagon"
 
-
-// <img class="h-52 w-52" src="imgs/hexagon.svg" alt="Why the hex no show"/>
+for (let i = 0; i < 10; i++) {
+    hexes[i] = baseHex.cloneNode()! as HTMLImageElement
+    hexes[i]!.classList.add('left-[500px]')
+    // hexes[i]?.classList.add('left-[200px]')
+    document.getElementById("hexContainer")!.appendChild(hexes[i]!)
+}
