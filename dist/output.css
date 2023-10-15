@@ -534,28 +534,12 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .absolute {
   position: absolute;
-}
-
-.left-\[1000px\] {
-  left: 1000px;
-}
-
-.left-\[200px\] {
-  left: 200px;
-}
-
-.left-\[10000px\] {
-  left: 10000px;
-}
-
-.left-\[100px\] {
-  left: 100px;
-}
-
-.left-\[500px\] {
-  left: 500px;
 }
 
 .m-0 {
@@ -580,6 +564,16 @@ video {
 
 .transform-gpu {
   transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .bg-slate-900 {
