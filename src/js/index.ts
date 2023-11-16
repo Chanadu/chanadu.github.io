@@ -6,6 +6,45 @@ function setMultipleAttributes(elem: SVGSVGElement | SVGPathElement, attributes:
     });
 }
 
+function makeHexStyle(): void {
+    // console.log("resize")
+    if (!document.getElementById("hexStyle")) {
+        hexStyle = document.createElement('style')
+        hexStyle.id = "hexStyle"
+    }
+    factor = Math.max((window.screen.availWidth / 1920), (window.screen.availHeight / 1920))
+    hexStyle.append(`    
+        #hexContainer {
+            transform: scale(${.85 * factor});
+        }
+    `)
+
+    for (let i: number = 0; i < hexes.length; i++) {
+        for (let j: number = 0; j < hexes[i]!.length; j++) {
+            addHexStyleSVGPositions(i, j);
+        }
+    }
+}
+window.onresize = makeHexStyle;
+
+function addHexStyleSVGPositions(i: number, j: number) {
+    hexStyle.append(`#hex${i}_${j} {
+        left: ${i * 20.4 + (j % 2 == 0 ? 0 : 10.2) - 11.5}rem; 
+            top: ${j * 17.7 - 8}rem;
+        }`) // DONT CHANGE NUMBERS
+}
+
+function getOffset(element: SVGPathElement | SVGSVGElement) {
+    var bound = element.getBoundingClientRect();
+    var html = document.documentElement;
+
+    return {
+        top: bound.top + window.pageYOffset - html.clientTop,
+        left: bound.left + window.pageXOffset - html.clientLeft,
+    };
+}
+
+
 let factor: number = Math.max((window.screen.availWidth / 1920), (window.screen.availHeight / 1920))
 
 let baseHexSvg: SVGSVGElement = document.createElementNS("http://www.w3.org/2000/svg", "svg") // Base
@@ -27,7 +66,6 @@ let svgAtributes = {
     "xmlns:svg": "http://www.w3.org/2000/svg",
     "class": "absolute transform-gpu top-0 left-0",
 };
-
 let pathAttributes1 = {
     "sodipodi:type": "star",
     "style": "fill:none;fill-opacity:1;stroke:#00ffff;stroke-opacity:1",
@@ -62,6 +100,35 @@ baseHexSvg.appendChild(baseHexPath1);
 baseHexSvg.appendChild(baseHexPath2);
 baseHexSvg.appendChild(baseHexPath3);
 
+let hoverHexSvg: SVGSVGElement = document.createElementNS("http://www.w3.org/2000/svg", "svg") // Base
+let hoverHexPath = document.createElementNS("http://www.w3.org/2000/svg", 'path') // Blue Outline
+let hoverSvgAtributes = {
+    "width": "86.836998mm",
+    "height": "100mm",
+    "viewBox": "0 0 86.836998 100",
+    "version": "1.1",
+    "id": "svg5",
+    "inkscape:version": "1.1.2 (0a00cf5339, 2022-02-04)",
+    "sodipodi:docname": "hexagon.svg",
+    "xmlns:inkscape": "http://www.inkscape.org/namespaces/inkscape",
+    "xmlns:sodipodi": "http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd",
+    "xmlns": "http://www.w3.org/2000/svg",
+    "xmlns:svg": "http://www.w3.org/2000/svg",
+    "class": "absolute transform-gpu top-0 left-0",
+};
+let hoverPathAttributes = {
+    "sodipodi:type": "star",
+    "style": "fill:#00ffff;fill-opacity:1;stroke:#00ffff;stroke-opacity:1",
+    "id": "path4166",
+    "d": "m 156.78449,-8.830696 163.60149,94.455365 -1e-5,188.910721 -163.60149,94.45536 ,-163.6014763,-94.45537 5e-6,-188.91072 z",
+    "transform": "matrix(0.26458432,0,0,0.26386776,1.9357815,2.4826872)",
+};
+setMultipleAttributes(hoverHexSvg, hoverSvgAtributes);
+setMultipleAttributes(hoverHexPath, hoverPathAttributes);
+
+hoverHexSvg.appendChild(hoverHexPath);
+let hexHoverEffect = document.getElementById('hexHoverEffect');
+hexHoverEffect!.appendChild(hoverHexSvg);
 
 
 let hexes: SVGSVGElement[][] = [...Array(10)].map(() => Array(10))
@@ -71,6 +138,7 @@ let hexesMouseOver: number[][] = [];
 let hexStyle: HTMLStyleElement;
 makeHexStyle()
 document.body.append(hexStyle!)
+
 
 for (let i: number = 0; i < hexes.length; i++) {
     for (let j: number = 0; j < hexes[i]!.length; j++) {
@@ -86,13 +154,17 @@ for (let i: number = 0; i < hexes.length; i++) {
         let innerHexPath: SVGPathElement = hexes[i]![j]!.children[2] as SVGPathElement;
         innerHexPath.onmouseenter = () => {
             hexesMouseOver.push([i, j]);
-            hexes[i]![j]!.classList.add("opacity-0");
+            // var oTop: number = getOffset(innerHexPath).top;
+            // var oLeft: number = getOffset(innerHexPath).left;
+            // hexHoverEffect!.style.top = oTop + "px";
+            // hexHoverEffect!.style.left = oLeft + "px";
+            // hexes[i]![j]!.classList.add("opacity-0");
         }
         innerHexPath.onmouseleave = () => {
             for (let k = 0; k < hexesMouseOver.length; k++) {
                 if (hexesMouseOver[k]![0] == i && hexesMouseOver[k]![1] == j) {
                     hexesMouseOver.splice(k, 1);
-                    hexes[i]![j]!.classList.remove("opacity-0");
+                    // hexes[i]![j]!.classList.remove("opacity-0");
                     break;
                 }
             }
@@ -100,32 +172,13 @@ for (let i: number = 0; i < hexes.length; i++) {
     }
 }
 
-
-function makeHexStyle(): void {
-    // console.log("resize")
-    if (!document.getElementById("hexStyle")) {
-        hexStyle = document.createElement('style')
-        hexStyle.id = "hexStyle"
-    }
-    factor = Math.max((window.screen.availWidth / 1920), (window.screen.availHeight / 1920))
-    hexStyle.append(`    
-        #hexContainer {
-            transform: scale(${.85 * factor});
-        }
-    `)
-
-    for (let i: number = 0; i < hexes.length; i++) {
-        for (let j: number = 0; j < hexes[i]!.length; j++) {
-            addHexStyleSVGPositions(i, j);
-        }
-    }
+document.onmousemove = (e) => {
+    let mousePosition = {
+        x: e.clientX,
+        y: e.clientY,
+    };
+    getOffset
+    hexHoverEffect!.style.left = (mousePosition.x - hoverHexPath.getBoundingClientRect().width / 2) + "px";
+    hexHoverEffect!.style.top = (mousePosition.y - hoverHexPath.getBoundingClientRect().height / 2) + "px";
+    console.log();
 }
-
-function addHexStyleSVGPositions(i: number, j: number) {
-    hexStyle.append(`#hex${i}_${j} {
-        left: ${i * 20.4 + (j % 2 == 0 ? 0 : 10.2) - 11.5}rem; 
-            top: ${j * 17.7 - 8}rem;
-        }`) // DONT CHANGE NUMBERS
-}
-
-window.onresize = makeHexStyle;
