@@ -21,7 +21,8 @@ function makeHexStyle() {
         hexStyle.id = "hexStyle";
     }
     factor = Math.max((window.screen.availWidth / 1920), (window.screen.availHeight / 1920));
-    hexStyle.append("    \n        #hexContainer {\n            transform: scale(".concat(.85 * factor, ");\n        }\n    "));
+    hexStyle.innerHTML = "";
+    hexStyle.append("    \n        #hexContainer {\n            transform: scale(".concat(.85 * factor, ")\n        }\n    "));
     for (var i = 0; i < hexes.length; i++) {
         for (var j = 0; j < hexes[i].length; j++) {
             addHexStyleSVGPositions(i, j);
@@ -98,42 +99,51 @@ var hoverSvgAtributes = {
     "version": "1.1",
     "id": "svg5",
     "inkscape:version": "1.1.2 (0a00cf5339, 2022-02-04)",
-    "sodipodi:docname": "hexagon.svg",
+    "sodipodi:docname": "hexagonHover.svg",
     "xmlns:inkscape": "http://www.inkscape.org/namespaces/inkscape",
     "xmlns:sodipodi": "http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd",
     "xmlns": "http://www.w3.org/2000/svg",
     "xmlns:svg": "http://www.w3.org/2000/svg",
-    "class": "absolute transform-gpu top-0 left-0",
+    "class": "absolute transform-gpu",
 };
 var hoverPathAttributes = {
     "sodipodi:type": "star",
-    "style": "fill:#00ffff;fill-opacity:1;stroke:#00ffff;stroke-opacity:1",
-    "id": "path4166",
+    "style": "fill:#00ffff;fill-opacity:1",
+    "id": "path4167",
     "d": "m 156.78449,-8.830696 163.60149,94.455365 -1e-5,188.910721 -163.60149,94.45536 ,-163.6014763,-94.45537 5e-6,-188.91072 z",
     "transform": "matrix(0.26458432,0,0,0.26386776,1.9357815,2.4826872)",
 };
 setMultipleAttributes(hoverHexSvg, hoverSvgAtributes);
 setMultipleAttributes(hoverHexPath, hoverPathAttributes);
 hoverHexSvg.appendChild(hoverHexPath);
+hoverHexSvg.id = "hoverHexSvg";
 var hexHoverEffect = document.getElementById('hexHoverEffect');
 hexHoverEffect.appendChild(hoverHexSvg);
 var hexes = __spreadArray([], Array(10), true).map(function () { return Array(10); });
 var hexesHolders = __spreadArray([], Array(10), true).map(function () { return Array(10); });
 var hexesMouseOver = [];
 var hexStyle;
+var hexHoverStyle = document.createElement('style');
 makeHexStyle();
 document.body.append(hexStyle);
+document.body.append(hexHoverStyle);
 var _loop_1 = function (i) {
     var _loop_2 = function (j) {
         hexes[i][j] = baseHexSvg.cloneNode(true);
-        hexes[i][j].id = "hex".concat(i, "_").concat(j);
+        var hex = hexes[i][j];
+        hex.id = "hex".concat(i, "_").concat(j);
         hexesHolders[i][j] = document.createElement('div');
         hexesHolders[i][j].id = "hexHolder".concat(i, "_").concat(j);
         document.getElementById("hexContainer").appendChild(hexesHolders[i][j]);
-        document.getElementById("hexHolder".concat(i, "_").concat(j)).appendChild(hexes[i][j]);
-        var innerHexPath = hexes[i][j].children[2];
+        document.getElementById("hexHolder".concat(i, "_").concat(j)).appendChild(hex);
+        var innerHexPath = hex.children[2];
         innerHexPath.onmouseenter = function () {
+            if (hexHoverEffect.classList.contains('opacity-0')) {
+                hexHoverEffect.classList.remove('opacity-0');
+            }
             hexesMouseOver.push([i, j]);
+            hexHoverStyle.innerHTML = "";
+            hexHoverStyle.append("\n                #hexHoverEffect {\n                    left: ".concat(i * 20.4 + (j % 2 == 0 ? 0 : 10.2) - 11.5, "rem;\n                    top: ").concat(j * 17.7 - 8, "rem;\n                }\n            "));
         };
         innerHexPath.onmouseleave = function () {
             for (var k = 0; k < hexesMouseOver.length; k++) {
@@ -151,14 +161,4 @@ var _loop_1 = function (i) {
 for (var i = 0; i < hexes.length; i++) {
     _loop_1(i);
 }
-document.onmousemove = function (e) {
-    var mousePosition = {
-        x: e.clientX,
-        y: e.clientY,
-    };
-    getOffset;
-    hexHoverEffect.style.left = (mousePosition.x - hoverHexPath.getBoundingClientRect().width / 2) + "px";
-    hexHoverEffect.style.top = (mousePosition.y - hoverHexPath.getBoundingClientRect().height / 2) + "px";
-    console.log();
-};
 //# sourceMappingURL=index.js.map
