@@ -1,5 +1,0 @@
-What to do:
-
-- Learn how to make SVG Art
-    - City
-    - Player
