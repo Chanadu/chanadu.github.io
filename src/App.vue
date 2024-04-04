@@ -1,10 +1,8 @@
-<script setup lang="ts">
-	import HelloWorld from './components/HelloWorld.vue';
-</script>
+<script setup lang="ts"></script>
 
 <template>
-	<div></div>
-	<HelloWorld msg="Website" />
+	<RouterView></RouterView>
+	<strong>{{ $route.fullPath }}</strong>
 </template>
 
 <style scoped></style>
