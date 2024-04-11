@@ -1,3 +1,0 @@
-Things to Do:
-	- Implement prefers-reduced-motion options
-	
