@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+	// Dang this is crazy just need to make a commit
+</script>
 
 <template>
 	<RouterView></RouterView>
