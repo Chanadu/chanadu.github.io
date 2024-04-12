@@ -4,7 +4,7 @@
 		<SmallPagePlaceholder :empty="true">1</SmallPagePlaceholder>
 		<SmallPagePlaceholder :empty="true">2</SmallPagePlaceholder>
 		<SmallPagePlaceholder :empty="true">3</SmallPagePlaceholder>
-		<SmallPagePlaceholder :empty="true">5</SmallPagePlaceholder>
+		<SmallPagePlaceholder :empty="true">4</SmallPagePlaceholder>
 		<SmallPagePlaceholder :empty="true">5</SmallPagePlaceholder>
 		<SmallPagePlaceholder :empty="true">6</SmallPagePlaceholder>
 		<SmallPagePlaceholder :empty="true">7</SmallPagePlaceholder>
