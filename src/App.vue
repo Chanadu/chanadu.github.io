@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	// Dang this is crazy just need to make a commit
+	// Dang this is crazy just need to make a commit 2
 </script>
 
 <template>
