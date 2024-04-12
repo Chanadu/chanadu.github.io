@@ -3,7 +3,7 @@
 	<div class="grid grid-cols-3 lg:gap-24 md:gap-24 sm:gap-16">
 		<SmallPagePlaceholder :empty="true">1</SmallPagePlaceholder>
 		<SmallPagePlaceholder :empty="true">2</SmallPagePlaceholder>
-		<SmallPagePlaceholder :empty="true">3</SmallPagePlaceholder>
+		<SmallPagePlaceholder :empty="true">5</SmallPagePlaceholder>
 		<SmallPagePlaceholder :empty="true">4</SmallPagePlaceholder>
 		<SmallPagePlaceholder :empty="true">5</SmallPagePlaceholder>
 		<SmallPagePlaceholder :empty="true">6</SmallPagePlaceholder>
