@@ -7,9 +7,10 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-	"deploy": "pnpm run build && git subtree push --prefix dist origin gh-pages"
+    "deploy": "pnpm run build && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
+    "html-loader": "^5.0.0",
     "url": "^0.11.3",
     "vue": "^3.4.21",
     "vue-router": "4"
