@@ -24,10 +24,10 @@
 		}
 	}
 	onMounted(() => {
-		document.addEventListener('scroll', test);
+		document.addEventListener('scroll', scrollEvent);
 	});
 	onUnmounted(() => {
-		document.removeEventListener('scroll', test);
+		document.removeEventListener('scroll', scrollEvent);
 	});
 </script>
 
