@@ -12,6 +12,23 @@
 <script setup lang="ts">
 	import NameCard from '../components/HomePage/NameCard.vue';
 	import HorizontalBar from '../components/HomePage/HorizontalBar.vue';
+	import { onMounted, onUnmounted } from 'vue';
+	import { useRouter } from 'vue-router';
+	import router from '../router/router';
+
+	function scrollEvent(event: Event) {
+		console.log(useRouter());
+		if (window.scrollY > 0) {
+			window.scrollTo(0, 0);
+			router.replace({ path: '/zoomed-out' });
+		}
+	}
+	onMounted(() => {
+		document.addEventListener('scroll', test);
+	});
+	onUnmounted(() => {
+		document.removeEventListener('scroll', test);
+	});
 </script>
 
 <style scoped></style>
