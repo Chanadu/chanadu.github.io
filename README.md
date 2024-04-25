@@ -1,1 +1,1 @@
-# I'm currently not working on this, see [chanadu.github.io/Website](https://chanadu.github.io/Website)
+# I'm currently not working on this, see [github.com/Chanadu/Website](https://github.com/Chanadu/Website)
