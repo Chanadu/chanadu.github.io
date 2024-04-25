@@ -1,7 +1,8 @@
 {
 	"include": [
 		"vite.config.*",
-		"vitest.config.*"
+		"vitest.config.*",
+		"../vite.config.ts"
 	],
 	"compilerOptions": {
 		"composite": true,
